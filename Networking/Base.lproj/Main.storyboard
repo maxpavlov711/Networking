@@ -124,7 +124,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-zZ-59x">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EZL-zZ-59x">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -142,12 +142,12 @@
                                                         <constraint firstAttribute="width" constant="140" id="lTn-LU-Hgh"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rez-RO-80W">
-                                                    <rect key="frame" x="168" y="0.0" width="226" height="35"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of course" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rez-RO-80W">
+                                                    <rect key="frame" x="168" y="0.0" width="226" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="UJm-PY-oIe"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -175,7 +175,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="Ih1-23-aaj" secondAttribute="bottom" constant="3" id="I0h-xp-FuU"/>
                                                 <constraint firstAttribute="bottom" secondItem="tgj-0c-uPJ" secondAttribute="bottom" id="K0l-C0-psY"/>
                                                 <constraint firstItem="Rez-RO-80W" firstAttribute="top" secondItem="rD9-vd-tEu" secondAttribute="top" id="NX2-l6-cGC"/>
-                                                <constraint firstItem="xa6-vO-UTA" firstAttribute="top" secondItem="Rez-RO-80W" secondAttribute="bottom" constant="10" id="Ofh-fh-bfj"/>
+                                                <constraint firstItem="xa6-vO-UTA" firstAttribute="top" secondItem="Rez-RO-80W" secondAttribute="bottom" constant="5" id="Ofh-fh-bfj"/>
                                                 <constraint firstItem="Ih1-23-aaj" firstAttribute="leading" secondItem="tgj-0c-uPJ" secondAttribute="trailing" constant="8" id="RgH-lm-cz1"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ih1-23-aaj" secondAttribute="trailing" constant="20" id="Rpi-Uw-rE9"/>
                                                 <constraint firstItem="Rez-RO-80W" firstAttribute="leading" secondItem="tgj-0c-uPJ" secondAttribute="trailing" constant="8" id="ZFw-dc-V1m"/>
