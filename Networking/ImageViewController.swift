@@ -9,6 +9,8 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
+    private let url = "https://img3.akspic.ru/originals/1/9/5/6/6/166591-bmw-legkovyye_avtomobili-sportkar-kompaktnyj_avtomobil-a_segmenta-1125x2436.jpg"
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -25,19 +27,11 @@ class ImageViewController: UIViewController {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         
-        guard let url = URL(string: "https://img3.akspic.ru/originals/1/9/5/6/6/166591-bmw-legkovyye_avtomobili-sportkar-kompaktnyj_avtomobil-a_segmenta-1125x2436.jpg") else { return }
+        NetworkManager.downloadImage(url: url) { image in
+            self.activityIndicator.stopAnimating()
+            self.imageView.image = image
+        }
         
-        let session = URLSession.shared
-        
-        session.dataTask(with: url) { data, response, error in
-           
-            if let data = data, let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.imageView.image = image
-                }
-            }
-        }.resume()
     }
 
 }

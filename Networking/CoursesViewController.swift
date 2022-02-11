@@ -14,6 +14,7 @@ class CoursesViewController: UIViewController {
     private var courses = [Course]()
     private var courseName: String?
     private var courseUrl: String?
+    private let url = "https://swiftbook.ru/wp-content/uploads/api/api_courses"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,30 +23,13 @@ class CoursesViewController: UIViewController {
     }
 
     func fetchData() {
-        
-//        let jsonUrlString = "https://swiftbook.ru/wp-content/uploads/api/api_course"
-        let jsonUrlString = "https://swiftbook.ru/wp-content/uploads/api/api_courses"
-//        let jsonUrlString = "https://swiftbook.ru/wp-content/uploads/api/api_website_description"
-//        let jsonUrlString = "https://swiftbook.ru/wp-content/uploads/api/api_missing_or_wrong_fields"
-        guard let url = URL(string: jsonUrlString) else { return }
-        
-        let urlSession = URLSession.shared.dataTask(with: url) { data, respose, error in
-            
-            guard let data = data else { return }
-            
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                self.courses = try decoder.decode([Course].self, from: data)
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch let error {
-                print("Error serialization JSON", error.localizedDescription)
+        NetworkManager.fetchData(url: url) { courses in
+            self.courses = courses
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
+        }
 
-        }.resume()
     }
     
     private func configureCell(cell: TableViewCell, for indexPath: IndexPath) {
@@ -109,6 +93,4 @@ extension CoursesViewController: UITableViewDataSource {
         configureCell(cell: cell, for: indexPath)
         return cell
     }
-    
-    
 }
