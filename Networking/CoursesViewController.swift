@@ -29,7 +29,6 @@ class CoursesViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
-
     }
     
     private func configureCell(cell: TableViewCell, for indexPath: IndexPath) {

@@ -21,7 +21,6 @@ class ImageViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         fetchImage()
     }
-    
 
     func fetchImage() {
         activityIndicator.isHidden = false
@@ -31,7 +30,5 @@ class ImageViewController: UIViewController {
             self.activityIndicator.stopAnimating()
             self.imageView.image = image
         }
-        
     }
-
 }

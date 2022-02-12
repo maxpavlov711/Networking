@@ -27,7 +27,10 @@ class WebViewController: UIViewController {
         webView.load(request)
         webView.allowsBackForwardNavigationGestures = true
         webView.navigationDelegate = self
-        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.allowsBackForwardNavigationGestures), options: .new, context: nil)
+        webView.addObserver(self,
+                            forKeyPath: #keyPath(WKWebView.allowsBackForwardNavigationGestures),
+                            options: .new,
+                            context: nil)
     }
     
     override func observeValue(forKeyPath keyPath: String?,

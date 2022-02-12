@@ -21,6 +21,7 @@
 		5A50B8D227B6AAF6002A22FC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A50B8D127B6AAF6002A22FC /* MainViewController.swift */; };
 		5A50B8D427B6AB09002A22FC /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A50B8D327B6AB09002A22FC /* CollectionViewCell.swift */; };
 		5A50B8D627B6AE19002A22FC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A50B8D527B6AE19002A22FC /* NetworkManager.swift */; };
+		5A50B8D827B7F4E5002A22FC /* ImageProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A50B8D727B7F4E5002A22FC /* ImageProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		5A50B8D127B6AAF6002A22FC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5A50B8D327B6AB09002A22FC /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		5A50B8D527B6AE19002A22FC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		5A50B8D727B7F4E5002A22FC /* ImageProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProperties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				5A50B8D327B6AB09002A22FC /* CollectionViewCell.swift */,
 				5A50B8C427B451A2002A22FC /* ImageViewController.swift */,
 				5A50B8C627B64B83002A22FC /* CoursesViewController.swift */,
+				5A50B8D727B7F4E5002A22FC /* ImageProperties.swift */,
 				5A50B8C927B64C4E002A22FC /* TableViewCell.swift */,
 				5A50B8CB27B64D6D002A22FC /* WebViewController.swift */,
 				5A50B8CD27B66690002A22FC /* Course.swift */,
@@ -170,6 +173,7 @@
 				5A50B8CA27B64C4E002A22FC /* TableViewCell.swift in Sources */,
 				5A50B8CC27B64D6D002A22FC /* WebViewController.swift in Sources */,
 				5A50B8B327B42798002A22FC /* SceneDelegate.swift in Sources */,
+				5A50B8D827B7F4E5002A22FC /* ImageProperties.swift in Sources */,
 				5A50B8C727B64B83002A22FC /* CoursesViewController.swift in Sources */,
 				5A50B8D227B6AAF6002A22FC /* MainViewController.swift in Sources */,
 				5A50B8D427B6AB09002A22FC /* CollectionViewCell.swift in Sources */,

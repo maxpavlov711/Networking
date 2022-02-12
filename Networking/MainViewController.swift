@@ -17,11 +17,11 @@ enum Actions: String, CaseIterable {
 
 private let reuseIdentifier = "Cell"
 private let url = "https://jsonplaceholder.typicode.com/posts"
+private let uploadImageUrl = "https://api.imgur.com/3/image"
 
 class MainViewController: UICollectionViewController {
 
     let actions = Actions.allCases
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return actions.count
@@ -49,7 +49,7 @@ class MainViewController: UICollectionViewController {
         case .ourCourses:
             performSegue(withIdentifier: "OurCourses", sender: self)
         case .uploadImage:
-            print("upload image")
+            NetworkManager.uploadImage(url: uploadImageUrl)
         }        
     }
 }
