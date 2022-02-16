@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bd3-eG-4aG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1621.7391304347827" y="308.70535714285711"/>
+            <point key="canvasLocation" x="1406" y="393"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="lXi-Dh-A0l">
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u2G-pD-lWW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2510.144927536232" y="308.70535714285711"/>
+            <point key="canvasLocation" x="2194" y="392"/>
         </scene>
         <!--Image-->
         <scene sceneID="tne-QT-ifu">
@@ -168,27 +168,42 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Xmc-aj-d2f">
                                 <rect key="frame" x="197" y="482" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRK-sv-l0S">
+                                <rect key="frame" x="165" y="537" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="4" translatesAutoresizingMaskIntoConstraints="NO" id="T4l-JY-gwt">
+                                <rect key="frame" x="132" y="603" width="150" height="4"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="olp-1g-nMq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="23Y-FL-Hj4"/>
+                            <constraint firstItem="lRK-sv-l0S" firstAttribute="top" secondItem="Xmc-aj-d2f" secondAttribute="bottom" constant="35" id="4bn-08-pjS"/>
                             <constraint firstItem="olp-1g-nMq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6rH-Pe-eoZ"/>
                             <constraint firstItem="Xmc-aj-d2f" firstAttribute="centerY" secondItem="olp-1g-nMq" secondAttribute="centerY" id="7mP-Vz-4rP"/>
+                            <constraint firstItem="T4l-JY-gwt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LHV-oq-Mlq"/>
                             <constraint firstItem="olp-1g-nMq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TKb-PT-uDy"/>
                             <constraint firstAttribute="bottom" secondItem="olp-1g-nMq" secondAttribute="bottom" id="o20-Q1-MdF"/>
+                            <constraint firstItem="T4l-JY-gwt" firstAttribute="top" secondItem="lRK-sv-l0S" secondAttribute="bottom" constant="45" id="o9P-BE-tnb"/>
                             <constraint firstItem="Xmc-aj-d2f" firstAttribute="centerX" secondItem="olp-1g-nMq" secondAttribute="centerX" id="uAI-su-IYc"/>
+                            <constraint firstItem="lRK-sv-l0S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xwC-0M-RpS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Image" id="TbA-cJ-UAN"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Xmc-aj-d2f" id="fjN-in-XNq"/>
+                        <outlet property="compleredLabel" destination="lRK-sv-l0S" id="4UX-K9-WmE"/>
                         <outlet property="imageView" destination="olp-1g-nMq" id="zma-VS-UFX"/>
+                        <outlet property="progressView" destination="T4l-JY-gwt" id="OTZ-oH-z0C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1471.0144927536232" y="-422.54464285714283"/>
+            <point key="canvasLocation" x="1406" y="-417"/>
         </scene>
         <!--Controls-->
         <scene sceneID="8AG-jv-K1N">
@@ -252,11 +267,12 @@
                         <segue destination="aDt-gj-047" kind="show" identifier="OurCourses" id="MRH-Iu-5ar"/>
                         <segue destination="aDt-gj-047" kind="show" identifier="OurCoursesWithAlamofire" id="Stf-0o-FZE"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="ResponseData" id="gRy-85-haw"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="LargeImage" id="flQ-wM-z6T"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Yc-ZC-WlA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="699" y="57"/>
+            <point key="canvasLocation" x="549" y="57"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iDq-bI-u7L">
@@ -274,11 +290,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWb-KY-hXA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-239.13043478260872" y="67.633928571428569"/>
+            <point key="canvasLocation" x="-187" y="57"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gRy-85-haw"/>
+        <segue reference="flQ-wM-z6T"/>
         <segue reference="Stf-0o-FZE"/>
     </inferredMetricsTieBreakers>
     <resources>
