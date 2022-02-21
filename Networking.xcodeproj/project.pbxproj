@@ -26,6 +26,7 @@
 		5A78144427BBDFC2007ABC71 /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78144327BBDFC2007ABC71 /* AlamofireNetworkRequest.swift */; };
 		5AA0717627BFC7E6009EB94F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA0717527BFC7E6009EB94F /* LoginViewController.swift */; };
 		5ABF318827C3D8D0008E8362 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABF318727C3D8D0008E8362 /* UserProfileVC.swift */; };
+		5ABF318A27C40478008E8362 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABF318927C40478008E8362 /* Extensions.swift */; };
 		74950136376BAD062B515196 /* Pods_Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB26FAAAF0183E6983FDAC4 /* Pods_Networking.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		5AA0717427BFB374009EB94F /* Networking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Networking.entitlements; sourceTree = "<group>"; };
 		5AA0717527BFC7E6009EB94F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5ABF318727C3D8D0008E8362 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		5ABF318927C40478008E8362 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6CB26FAAAF0183E6983FDAC4 /* Pods_Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5528525647B2BFCE27A7D39 /* Pods-Networking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking.release.xcconfig"; path = "Target Support Files/Pods-Networking/Pods-Networking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +109,7 @@
 				5A50B8CB27B64D6D002A22FC /* WebViewController.swift */,
 				5A50B8CD27B66690002A22FC /* Course.swift */,
 				5A50B8CF27B66CE8002A22FC /* WebsiteDescription.swift */,
+				5ABF318927C40478008E8362 /* Extensions.swift */,
 				5A50B8B627B42798002A22FC /* Main.storyboard */,
 				5A50B8B927B42799002A22FC /* Assets.xcassets */,
 				5A50B8BB27B42799002A22FC /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 				5A50B8D827B7F4E5002A22FC /* ImageProperties.swift in Sources */,
 				5A50B8C727B64B83002A22FC /* CoursesViewController.swift in Sources */,
 				5A50B8D227B6AAF6002A22FC /* MainViewController.swift in Sources */,
+				5ABF318A27C40478008E8362 /* Extensions.swift in Sources */,
 				5A50B8D427B6AB09002A22FC /* CollectionViewCell.swift in Sources */,
 				5A50B8DA27B7FD9A002A22FC /* DataProvider.swift in Sources */,
 			);

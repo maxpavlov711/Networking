@@ -305,7 +305,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IFV-Nn-adv"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
                             <constraint firstItem="bMg-E7-seD" firstAttribute="top" secondItem="IFV-Nn-adv" secondAttribute="top" constant="70" id="0ov-hc-fK0"/>
                             <constraint firstItem="GyJ-QW-F4U" firstAttribute="top" secondItem="bMg-E7-seD" secondAttribute="bottom" constant="20" id="6lH-Se-dIV"/>
@@ -400,6 +400,9 @@
         <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

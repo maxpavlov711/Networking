@@ -12,8 +12,20 @@ class LoginViewController: UIViewController {
     
     lazy var fbLoginButton: UIButton = {
         let loginButton = FBLoginButton()
-        loginButton.frame = CGRect(x: 32, y: 400, width: view.frame.width - 64, height: 50)
+        loginButton.frame = CGRect(x: 32, y: 350, width: view.frame.width - 64, height: 50)
         loginButton.delegate = self
+        return loginButton
+    }()
+    
+    lazy var customFacebookLoginButton: UIButton = {
+        let loginButton = UIButton()
+        loginButton.backgroundColor = UIColor(hexValue: "#3B5999", alpha: 1)
+        loginButton.setTitle("Login with Facebook", for: .normal)
+        loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        loginButton.setTitleColor(.white, for: .normal)
+        loginButton.frame = CGRect(x: 32, y: 420, width: view.frame.width - 64, height: 50)
+        loginButton.layer.cornerRadius = 4
+        loginButton.addTarget(self, action: #selector (handleCustomFacebookLogin), for: .touchUpInside)
         return loginButton
     }()
 
@@ -26,7 +38,9 @@ class LoginViewController: UIViewController {
 
     private func setupViews() {
         view.addSubview(fbLoginButton)
+        view.addSubview(customFacebookLoginButton)
     }
+    
 }
 
 // MARK: - Facebook SDK
@@ -53,5 +67,22 @@ extension LoginViewController: LoginButtonDelegate {
     
     private func openMainViewController() {
         dismiss(animated: true)
+    }
+    
+    @objc private func handleCustomFacebookLogin() {
+        
+        let loginManager = LoginManager()
+        loginManager.logIn(permissions: ["public_profile", "email"], from: self) { result, error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+            guard let result = result else { return }
+            
+            if result.isCancelled { return }
+            else {
+                self.openMainViewController()
+            }
+        }
     }
 }
