@@ -50,15 +50,6 @@ extension UserProfileVC: LoginButtonDelegate {
     
     private func openLoginViewController() {
         
-        //        if !(AccessToken.isCurrentAccessTokenActive) {
-        //
-        //            DispatchQueue.main.async {
-        //                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //                let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        //                self.present(loginViewController, animated: true, completion: nil)
-        //                return
-        //            }
-        //        }
         do {
             try Auth.auth().signOut()
             
@@ -72,6 +63,5 @@ extension UserProfileVC: LoginButtonDelegate {
             print("Failed to sign out with error: ", error.localizedDescription)
         }
     }
-    
     
 }
