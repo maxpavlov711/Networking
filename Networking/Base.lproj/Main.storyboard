@@ -320,7 +320,7 @@
             </objects>
             <point key="canvasLocation" x="-1839" y="87"/>
         </scene>
-        <!--Item 2-->
+        <!--Person-->
         <scene sceneID="ZZ4-cG-ltw">
             <objects>
                 <viewController id="R30-iO-V5S" customClass="UserProfileVC" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
@@ -338,13 +338,13 @@
                         <viewLayoutGuide key="safeArea" id="jhf-e7-ZPB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="y9E-XD-IyY" firstAttribute="top" secondItem="jhf-e7-ZPB" secondAttribute="top" constant="200" id="12I-9t-fTw"/>
-                            <constraint firstItem="y9E-XD-IyY" firstAttribute="leading" secondItem="jhf-e7-ZPB" secondAttribute="leading" constant="50" id="AxQ-2d-HKe"/>
-                            <constraint firstItem="jhf-e7-ZPB" firstAttribute="trailing" secondItem="y9E-XD-IyY" secondAttribute="trailing" constant="50" id="FzE-8o-YaI"/>
+                            <constraint firstItem="y9E-XD-IyY" firstAttribute="leading" secondItem="jhf-e7-ZPB" secondAttribute="leading" constant="50" id="Jey-db-d9Z"/>
                             <constraint firstItem="y9E-XD-IyY" firstAttribute="centerX" secondItem="NIG-IO-o1I" secondAttribute="centerX" id="MzT-hy-bml"/>
+                            <constraint firstItem="jhf-e7-ZPB" firstAttribute="trailing" secondItem="y9E-XD-IyY" secondAttribute="trailing" constant="50" id="Qng-AO-tBq"/>
+                            <constraint firstItem="y9E-XD-IyY" firstAttribute="top" secondItem="jhf-e7-ZPB" secondAttribute="top" constant="200" id="xe2-0d-mef"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" image="person" catalog="system" id="DVw-BX-MJ2"/>
+                    <tabBarItem key="tabBarItem" title="Person" image="person" catalog="system" id="DVw-BX-MJ2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8JL-gu-mm5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -369,11 +369,11 @@
             </objects>
             <point key="canvasLocation" x="-962" y="96"/>
         </scene>
-        <!--Item-->
+        <!--Main-->
         <scene sceneID="iDq-bI-u7L">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bCb-Zs-n8j" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="list.dash" catalog="system" id="Dxs-3G-lFO"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="list.dash" catalog="system" id="Dxs-3G-lFO"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="UDy-Dk-DJI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iwo-Sp-HY7">
