@@ -8,8 +8,11 @@
 import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
+    
+    var userProfile: UserProfile?
     
     lazy var fbLoginButton: UIButton = {
         let loginButton = FBLoginButton()
@@ -56,10 +59,8 @@ extension LoginViewController: LoginButtonDelegate {
         
         guard AccessToken.isCurrentAccessTokenActive  else { return }
         
-        fetchFacebookFields()
-        openMainViewController()
-        
         print("Successfully logget in with facebook")
+        singIntoFirebase()
     }
     
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
@@ -84,8 +85,6 @@ extension LoginViewController: LoginButtonDelegate {
             if result.isCancelled { return }
             else {
                 self.singIntoFirebase()
-                self.fetchFacebookFields()
-                self.openMainViewController()
             }
         }
     }
@@ -103,7 +102,8 @@ extension LoginViewController: LoginButtonDelegate {
                 print(error.localizedDescription)
             }
             
-            print("Successfully logget in with our FB user: ", user!)
+            print("Successfully logget in with our FB user")
+            self.fetchFacebookFields()
         }
     }
     
@@ -116,8 +116,31 @@ extension LoginViewController: LoginButtonDelegate {
             }
             
             if let userData = result as? [String: Any] {
+                self.userProfile = UserProfile(data: userData)
                 print(userData)
+                print(self.userProfile?.name ?? "nil")
+                self.saveIntoFirebase()
             }
         }
+    }
+    
+    private func saveIntoFirebase() {
+        
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        let userData = ["name": userProfile?.name, "email": userProfile?.email]
+        
+        let values = [uid: userData]
+        
+        Database.database().reference().child("users").updateChildValues(values) { error, _ in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            print("Successfully save user into firebase database")
+            self.openMainViewController()
+        }
+        
     }
 }

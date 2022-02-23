@@ -11,5 +11,6 @@ target 'Networking' do
 	pod 'FBSDKCoreKit'  
 	pod 'FBSDKLoginKit'
 	pod 'Firebase/Auth'
+  	pod 'Firebase/Database'
 
 end
