@@ -329,22 +329,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logget in with Facebook" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9E-XD-IyY">
-                                <rect key="frame" x="50" y="244" width="314" height="72"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="76" y="244" width="262" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Dmi-wS-SAL">
+                                <rect key="frame" x="197" y="249" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jhf-e7-ZPB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="y9E-XD-IyY" firstAttribute="leading" secondItem="jhf-e7-ZPB" secondAttribute="leading" constant="50" id="Jey-db-d9Z"/>
+                            <constraint firstItem="Dmi-wS-SAL" firstAttribute="centerX" secondItem="y9E-XD-IyY" secondAttribute="centerX" id="Geo-W2-koT"/>
                             <constraint firstItem="y9E-XD-IyY" firstAttribute="centerX" secondItem="NIG-IO-o1I" secondAttribute="centerX" id="MzT-hy-bml"/>
-                            <constraint firstItem="jhf-e7-ZPB" firstAttribute="trailing" secondItem="y9E-XD-IyY" secondAttribute="trailing" constant="50" id="Qng-AO-tBq"/>
+                            <constraint firstItem="Dmi-wS-SAL" firstAttribute="centerY" secondItem="y9E-XD-IyY" secondAttribute="centerY" id="VYE-Kj-Vbg"/>
                             <constraint firstItem="y9E-XD-IyY" firstAttribute="top" secondItem="jhf-e7-ZPB" secondAttribute="top" constant="200" id="xe2-0d-mef"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Person" image="person" catalog="system" id="DVw-BX-MJ2"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Dmi-wS-SAL" id="IfG-W5-sKM"/>
+                        <outlet property="userNameLabel" destination="y9E-XD-IyY" id="RhN-wc-xlE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8JL-gu-mm5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
