@@ -195,8 +195,6 @@ class AlamofireNetworkRequest {
                 print(error.localizedDescription)
             }
         }
-        
-        
     }
 }
 

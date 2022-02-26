@@ -26,6 +26,7 @@ class UserProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        activityIndicator.startAnimating()
         userNameLabel.isHidden = true
         setupViews()
     }
@@ -40,6 +41,7 @@ class UserProfileVC: UIViewController {
         view.addSubview(fbLoginButton)
     }
 }
+
 // MARK: - Facebook SDK
 extension UserProfileVC: LoginButtonDelegate {
     
@@ -89,6 +91,7 @@ extension UserProfileVC: LoginButtonDelegate {
                 guard let userName = currentUser?.name,
                       let userEmail = currentUser?.email else { return }
                 self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
                 self.userNameLabel.isHidden = false
                 self.userNameLabel.text = "\(userName)\n Logged in with Facebook\n\(userEmail)"
                 
@@ -98,3 +101,5 @@ extension UserProfileVC: LoginButtonDelegate {
         }
     }
 }
+
+
