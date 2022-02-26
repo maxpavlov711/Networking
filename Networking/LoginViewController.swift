@@ -169,6 +169,12 @@ extension LoginViewController {
                 return
             }
 
+            if let userName = user?.profile?.name, let userEmail = user?.profile?.email {
+                
+                let userData = ["name": userName, "email": userEmail]
+                
+                self.userProfile = UserProfile(data: userData)
+            }
             guard let authentication = user?.authentication, let idToken = authentication.idToken else { return }
 
             let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: authentication.accessToken)
@@ -183,7 +189,7 @@ extension LoginViewController {
                 }
 
                 print("Successfully logged into Firebase wirh Google")
-                self.openMainViewController()
+                self.saveIntoFirebase()
             }
         }
     }
