@@ -21,8 +21,10 @@ class UserProfileVC: UIViewController {
     
     lazy var logOutButton: UIButton = {
         let button = UIButton()
-        button.frame = CGRect(x: 32, y: view.frame.height - 170,
-                                   width: view.frame.width - 64, height: 50)
+        button.frame = CGRect(x: 32,
+                              y: view.frame.height - 170,
+                              width: view.frame.width - 64,
+                              height: 50)
         button.backgroundColor = UIColor(hexValue: "#3B5999", alpha: 1)
         button.setTitle("Log Out", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)

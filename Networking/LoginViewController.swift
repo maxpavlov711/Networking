@@ -18,7 +18,10 @@ class LoginViewController: UIViewController {
     
     lazy var fbLoginButton: UIButton = {
         let loginButton = FBLoginButton()
-        loginButton.frame = CGRect(x: 32, y: 350, width: view.frame.width - 64, height: 50)
+        loginButton.frame = CGRect(x: 32,
+                                   y: 350,
+                                   width: view.frame.width - 64,
+                                   height: 50)
         loginButton.delegate = self
         return loginButton
     }()
@@ -29,7 +32,10 @@ class LoginViewController: UIViewController {
         loginButton.setTitle("Login with Facebook", for: .normal)
         loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         loginButton.setTitleColor(.white, for: .normal)
-        loginButton.frame = CGRect(x: 32, y: 420, width: view.frame.width - 64, height: 50)
+        loginButton.frame = CGRect(x: 32,
+                                   y: 420,
+                                   width: view.frame.width - 64,
+                                   height: 50)
         loginButton.layer.cornerRadius = 4
         loginButton.addTarget(self, action: #selector (handleCustomFacebookLogin), for: .touchUpInside)
         return loginButton
@@ -37,7 +43,25 @@ class LoginViewController: UIViewController {
     
     lazy var googleLoginButton: GIDSignInButton = {
         let loginButton = GIDSignInButton()
-        loginButton.frame = CGRect(x: 32, y: 490, width: view.frame.width - 64, height: 50)
+        loginButton.frame = CGRect(x: 32,
+                                   y: 490,
+                                   width: view.frame.width - 64,
+                                   height: 50)
+        loginButton.addTarget(self, action: #selector(googleSingIn), for: .touchUpInside)
+        return loginButton
+    }()
+    
+    lazy var customGoogleLoginButton: UIButton = {
+        let loginButton = UIButton()
+        loginButton.frame = CGRect(x: 32,
+                                   y: 560,
+                                   width: view.frame.width - 64,
+                                   height: 50)
+        loginButton.backgroundColor = .white
+        loginButton.setTitle("Login with Google", for: .normal)
+        loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        loginButton.setTitleColor(.gray, for: .normal)
+        loginButton.layer.cornerRadius = 4
         loginButton.addTarget(self, action: #selector(googleSingIn), for: .touchUpInside)
         return loginButton
     }()
@@ -53,6 +77,7 @@ class LoginViewController: UIViewController {
         view.addSubview(fbLoginButton)
         view.addSubview(customFacebookLoginButton)
         view.addSubview(googleLoginButton)
+        view.addSubview(customGoogleLoginButton)
     }
 }
 
