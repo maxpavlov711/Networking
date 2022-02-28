@@ -23,6 +23,8 @@
 		5A50B8D627B6AE19002A22FC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A50B8D527B6AE19002A22FC /* NetworkManager.swift */; };
 		5A50B8D827B7F4E5002A22FC /* ImageProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A50B8D727B7F4E5002A22FC /* ImageProperties.swift */; };
 		5A50B8DA27B7FD9A002A22FC /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A50B8D927B7FD9A002A22FC /* DataProvider.swift */; };
+		5A68BB7A27CD5923000D4BCA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A68BB7927CD5922000D4BCA /* SignInViewController.swift */; };
+		5A68BB7C27CD5936000D4BCA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A68BB7B27CD5936000D4BCA /* SignUpViewController.swift */; };
 		5A78144427BBDFC2007ABC71 /* AlamofireNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A78144327BBDFC2007ABC71 /* AlamofireNetworkRequest.swift */; };
 		5A9FC61827C649D300094500 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9FC61727C649D300094500 /* UserProfile.swift */; };
 		5A9FC61C27C669E000094500 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A9FC61B27C669E000094500 /* GoogleService-Info.plist */; };
@@ -53,6 +55,8 @@
 		5A50B8D527B6AE19002A22FC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5A50B8D727B7F4E5002A22FC /* ImageProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProperties.swift; sourceTree = "<group>"; };
 		5A50B8D927B7FD9A002A22FC /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		5A68BB7927CD5922000D4BCA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5A68BB7B27CD5936000D4BCA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5A78144327BBDFC2007ABC71 /* AlamofireNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkRequest.swift; sourceTree = "<group>"; };
 		5A9FC61727C649D300094500 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		5A9FC61B27C669E000094500 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				5A50B8B227B42798002A22FC /* SceneDelegate.swift */,
 				5AA0717527BFC7E6009EB94F /* LoginViewController.swift */,
 				5ABF318727C3D8D0008E8362 /* UserProfileVC.swift */,
+				5A68BB7927CD5922000D4BCA /* SignInViewController.swift */,
+				5A68BB7B27CD5936000D4BCA /* SignUpViewController.swift */,
 				5A78144327BBDFC2007ABC71 /* AlamofireNetworkRequest.swift */,
 				5A50B8D527B6AE19002A22FC /* NetworkManager.swift */,
 				5A50B8D927B7FD9A002A22FC /* DataProvider.swift */,
@@ -268,12 +274,14 @@
 				5A50B8B127B42798002A22FC /* AppDelegate.swift in Sources */,
 				5A50B8C527B451A2002A22FC /* ImageViewController.swift in Sources */,
 				5A50B8CA27B64C4E002A22FC /* TableViewCell.swift in Sources */,
+				5A68BB7A27CD5923000D4BCA /* SignInViewController.swift in Sources */,
 				5ABF318827C3D8D0008E8362 /* UserProfileVC.swift in Sources */,
 				5A9FC61827C649D300094500 /* UserProfile.swift in Sources */,
 				5A50B8CC27B64D6D002A22FC /* WebViewController.swift in Sources */,
 				5A78144427BBDFC2007ABC71 /* AlamofireNetworkRequest.swift in Sources */,
 				5A50B8B327B42798002A22FC /* SceneDelegate.swift in Sources */,
 				5A50B8D827B7F4E5002A22FC /* ImageProperties.swift in Sources */,
+				5A68BB7C27CD5936000D4BCA /* SignUpViewController.swift in Sources */,
 				5A50B8C727B64B83002A22FC /* CoursesViewController.swift in Sources */,
 				5A50B8D227B6AAF6002A22FC /* MainViewController.swift in Sources */,
 				5ABF318A27C40478008E8362 /* Extensions.swift in Sources */,

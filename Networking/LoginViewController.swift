@@ -66,6 +66,14 @@ class LoginViewController: UIViewController {
         return loginButton
     }()
     
+    lazy var signInWithEmail: UIButton = {
+        let loginButton = UIButton()
+        loginButton.frame = CGRect(x: 32, y: 630, width: view.frame.width - 64, height: 50)
+        loginButton.setTitle("Sign In with Email", for: .normal)
+        loginButton.addTarget(self, action: #selector(openSignIn), for: .touchUpInside)
+        return loginButton
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,6 +86,7 @@ class LoginViewController: UIViewController {
         view.addSubview(customFacebookLoginButton)
         view.addSubview(googleLoginButton)
         view.addSubview(customGoogleLoginButton)
+        view.addSubview(signInWithEmail)
     }
 }
 
@@ -175,6 +184,11 @@ extension LoginViewController: LoginButtonDelegate {
             print("Successfully save user into firebase database")
             self.openMainViewController()
         }
+    }
+    
+    // MARK: - Sign In from Email
+    @objc private func openSignIn() {
+        performSegue(withIdentifier: "SignIn", sender: self)
     }
 }
 
