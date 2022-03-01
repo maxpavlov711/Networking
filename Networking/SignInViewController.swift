@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignInViewController: UIViewController {
     
@@ -92,5 +93,25 @@ class SignInViewController: UIViewController {
         setContinueButton(enable: false)
         continueButton.setTitle("", for: .normal)
         activityIndicator.startAnimating()
+        
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { user, error in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                
+                self.setContinueButton(enable: true)
+                self.continueButton.setTitle("Continue", for: .normal)
+                self.activityIndicator.stopAnimating()
+                
+                return
+            }
+            
+            print("Successfully logget in with Email")
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+            
+            
+        }
     }
 }
