@@ -118,6 +118,7 @@ class SignUpViewController: UIViewController {
             print("Successfully logget into Firebase with User Email")
             
             if let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest() {
+                
                 changeRequest.displayName = userName
                 changeRequest.commitChanges { error in
                     if let error = error {
@@ -129,7 +130,7 @@ class SignUpViewController: UIViewController {
                     }
                     
                     print("User display name changed!")
-                    self.presentedViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true, completion: nil)
+                    self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
                 }
             }
         }

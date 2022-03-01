@@ -37,7 +37,6 @@ class UserProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityIndicator.startAnimating()
         userNameLabel.isHidden = true
         setupViews()
     }
@@ -54,7 +53,7 @@ class UserProfileVC: UIViewController {
 }
 
 extension UserProfileVC {
-        
+    
     private func openLoginViewController() {
         
         do {
@@ -75,20 +74,27 @@ extension UserProfileVC {
         
         if Auth.auth() != nil {
             
-            guard let uid = Auth.auth().currentUser?.uid else { return }
-            
-            Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { snapshot in
+            if let userName = Auth.auth().currentUser?.displayName {
+                activityIndicator.stopAnimating()
+                activityIndicator.isHidden = true
+                userNameLabel.isHidden = false
+                userNameLabel.text = getProviderData(with: userName)
+            } else {
                 
-                guard let userData = snapshot.value as? [String: Any] else { return }
+                guard let uid = Auth.auth().currentUser?.uid else { return }
                 
-                self.currentUser = CurrentUser(uid: uid, data: userData)
-                self.activityIndicator.stopAnimating()
-                self.activityIndicator.isHidden = true
-                self.userNameLabel.isHidden = false
-                self.userNameLabel.text = self.getProviderData()
-                
-            } withCancel: { error in
-                print(error.localizedDescription)
+                Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { snapshot in
+                    
+                    guard let userData = snapshot.value as? [String: Any] else { return }
+                    
+                    self.currentUser = CurrentUser(uid: uid, data: userData)
+                    self.activityIndicator.stopAnimating()
+                    self.userNameLabel.isHidden = false
+                    self.userNameLabel.text = self.getProviderData(with: self.currentUser?.name ?? "NoName")
+                    
+                } withCancel: { error in
+                    print(error.localizedDescription)
+                }
             }
         }
     }
@@ -107,6 +113,10 @@ extension UserProfileVC {
                     GIDSignIn.sharedInstance.signOut()
                     print("User did log out of Google")
                     openLoginViewController()
+                case "password":
+                    try! Auth.auth().signOut()
+                    print("User did sign out")
+                    openLoginViewController()
                 default:
                     print("User is signed in with \(userInfo.providerID)")
                 }
@@ -114,7 +124,7 @@ extension UserProfileVC {
         }
     }
     
-    private func getProviderData() -> String {
+    private func getProviderData(with user: String) -> String {
         
         var greetings = " "
         
@@ -127,11 +137,13 @@ extension UserProfileVC {
                     provider = "Facebook"
                 case "google.com":
                     provider = "Google"
+                case "password":
+                    provider = "Email"
                 default:
                     break
                 }
             }
-            greetings = "\(currentUser?.name ?? "No name")\n Logged in with\n \(provider!)"
+            greetings = "\(user)\n Logged in with\n \(provider!)"
         }
         return greetings
     }
