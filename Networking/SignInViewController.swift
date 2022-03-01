@@ -12,6 +12,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var activityIndicator: UIActivityIndicatorView!
     lazy var continueButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
@@ -31,6 +32,12 @@ class SignInViewController: UIViewController {
 
         view.addSubview(continueButton)
         setContinueButton(enable: false)
+        
+        activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+        activityIndicator.color = secondaryColor
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.center = continueButton.center
+        view.addSubview(activityIndicator)
         
         emailTextField.addTarget(self, action: #selector(textFiledChanget), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFiledChanget), for: .editingChanged)
@@ -67,6 +74,8 @@ class SignInViewController: UIViewController {
         
         continueButton.center = CGPoint(x: view.center.x,
                                         y: view.frame.height - keyboardFrame.height - 16.0 - continueButton.frame.height / 2)
+        
+        activityIndicator.center = continueButton.center
     }
     
     @objc private func textFiledChanget() {
@@ -80,5 +89,8 @@ class SignInViewController: UIViewController {
     
     @objc private func handleSignIn() {
         
+        setContinueButton(enable: false)
+        continueButton.setTitle("", for: .normal)
+        activityIndicator.startAnimating()
     }
 }

@@ -14,6 +14,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    var activityIndicator: UIActivityIndicatorView!
     lazy var continueButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
@@ -24,7 +25,7 @@ class SignUpViewController: UIViewController {
         button.setTitleColor(secondaryColor, for: .normal)
         button.layer.cornerRadius = 4
         button.alpha = 0.5
-        button.addTarget(self, action: #selector(handleSignIn), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -33,6 +34,12 @@ class SignUpViewController: UIViewController {
         
         view.addSubview(continueButton)
         setContinueButton(enable: false)
+        
+        activityIndicator = UIActivityIndicatorView(style: .gray)
+        activityIndicator.color = secondaryColor
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        activityIndicator.center = continueButton.center
+        view.addSubview(activityIndicator)
         
         userNameTextField.addTarget(self, action: #selector(textFiledChanget), for: .editingChanged)
         emailTextFeild.addTarget(self, action: #selector(textFiledChanget), for: .editingChanged)
@@ -70,6 +77,8 @@ class SignUpViewController: UIViewController {
         
         continueButton.center = CGPoint(x: view.center.x,
                                         y: view.frame.height - keyboardFrame.height - 16.0 - continueButton.frame.height / 2)
+        
+        activityIndicator.center = continueButton.center
     }
     
     @objc private func textFiledChanget() {
@@ -84,7 +93,10 @@ class SignUpViewController: UIViewController {
         setContinueButton(enable: formFilled)
     }
     
-    @objc private func handleSignIn() {
+    @objc private func handleSignUp() {
         
+        setContinueButton(enable: false)
+        continueButton.setTitle("", for: .normal)
+        activityIndicator.startAnimating()
     }
 }
